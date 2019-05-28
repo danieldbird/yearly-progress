@@ -6,16 +6,22 @@
 body {
   background: #111;
 }
+.month {
+  font-size: 5vw;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
 .calendar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.05);
 }
 .space {
-  line-height: 4em;
+  line-height: 2.5vw;
   text-align: center;
   color: rgb(112, 112, 112);
-  padding: 0 1.5em;
+  padding: 0 0.4em;
   align-self: center;
 }
 
@@ -26,7 +32,7 @@ body {
 
 .space:nth-child(1),
 .space:nth-last-child(1) {
-  font-size: 1vw;
+  font-size: 1.25vw;
   color: rgb(216, 216, 216);
 }
 
@@ -43,7 +49,7 @@ body {
   margin: 14px auto;
   background: rgb(83, 83, 83);
   height: 2px;
-  width: 100vw;
+  width: 90vw;
 }
 .percentage {
   text-align: center;
@@ -52,4 +58,5 @@ body {
   color: rgb(165, 165, 165);
   position: absolute;
   background: #111;
+  font-size: 1vw;
 }

@@ -1,12 +1,29 @@
-var weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var weekdays = ["M", "T", "W", "T", "F", "S", "S"];
+var months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+];
 
 function updateCalendar() {
   let date = new Date();
   let year = date.getFullYear();
   let month = date.getMonth();
   let day = date.getDate();
-  let daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  let daysInMonth = new Date(
+    date.getFullYear(),
+    date.getMonth() + 1,
+    0
+  ).getDate();
 
   Date.prototype.isLeapYear = function() {
     if ((year & 3) != 0) return false;
@@ -30,12 +47,16 @@ function updateCalendar() {
     return data % 400 === 0 || (data % 100 !== 0 && data % 4 === 0);
   }
 
+  $(".month").html(months[month].toUpperCase());
+
   $(".calendar").prepend("<div class='space'>" + year + "</div>");
   for (let index = 0; index < daysInMonth; index++) {
     if (index + 1 === day) {
       $(".calendar").append(
         "<div class='space active'><span class='weekday'>" +
-          weekdays[new Date(date.getFullYear(), date.getMonth(), index).getDay()] +
+          weekdays[
+            new Date(date.getFullYear(), date.getMonth(), index).getDay()
+          ] +
           "</span><span class='day'>" +
           (index + 1) +
           "</span></div>"
@@ -43,7 +64,9 @@ function updateCalendar() {
     } else {
       $(".calendar").append(
         "<div class='space'><span class='weekday'>" +
-          weekdays[new Date(date.getFullYear(), date.getMonth(), index).getDay()] +
+          weekdays[
+            new Date(date.getFullYear(), date.getMonth(), index).getDay()
+          ] +
           "</span><span class='day'>" +
           (index + 1) +
           "</span></div>"
@@ -53,7 +76,11 @@ function updateCalendar() {
   $(".calendar").append("<div class='space'>" + (year + 1) + "</div>");
 
   for (let index = 0; index < daysInMonth; index++) {
-    console.log(index + 1 + weekdays[new Date(date.getFullYear(), date.getMonth(), index).getDay()]);
+    console.log(
+      index +
+        1 +
+        weekdays[new Date(date.getFullYear(), date.getMonth(), index).getDay()]
+    );
   }
 
   $(".percentage")
@@ -66,7 +93,10 @@ function updateCalendar() {
   console.log("Days in month: " + daysInMonth);
   console.log("Days in year: " + daysInYear(year));
   console.log("Current day of year: " + date.getDOY());
-  console.log("Percentage of year: " + ((date.getDOY() / daysInYear(year)) * 100).toFixed(2));
+  console.log(
+    "Percentage of year: " +
+      ((date.getDOY() / daysInYear(year)) * 100).toFixed(2)
+  );
 }
 
 updateCalendar();

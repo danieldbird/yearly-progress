@@ -1,5 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #111;
+}
 .calendar {
-  background: #ccc;
-  height: 40px;
-  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background: rgba(255, 255, 255, 0.05);
+}
+.space {
+  line-height: 4em;
+  text-align: center;
+  color: rgb(112, 112, 112);
+  padding: 0 1.5em;
+  align-self: center;
+}
+
+.active {
+  color: rgb(88, 165, 238);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.space:nth-child(1),
+.space:nth-last-child(1) {
+  font-size: 1vw;
+  color: rgb(216, 216, 216);
+}
+
+.weekday {
+  display: block;
+}
+.day {
+  display: block;
+}
+
+.progress {
+  text-align: center;
+  position: relative;
+  margin: 14px auto;
+  background: rgb(83, 83, 83);
+  height: 2px;
+  width: 100vw;
+}
+.percentage {
+  text-align: center;
+  margin-top: -7px;
+  padding: 0 1em;
+  color: rgb(165, 165, 165);
+  position: absolute;
+  background: #111;
 }

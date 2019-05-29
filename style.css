@@ -2,61 +2,82 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body {
-  background: #111;
+  font-family: "Lucida Grande";
 }
 .month {
-  font-size: 5vw;
-  color: #fff;
+  font-size: 1.5vw;
+  color: rgb(233, 233, 233);
   text-align: center;
   display: block;
+  line-height: 2em;
 }
 .calendar {
   display: flex;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.014);
+  padding: 0 10%;
 }
 .space {
+  width: 90%;
   line-height: 2.5vw;
   text-align: center;
-  color: rgb(112, 112, 112);
-  padding: 0 0.4em;
   align-self: center;
+  color: rgb(202, 202, 202);
 }
 
-.active {
-  color: rgb(88, 165, 238);
-  background: rgba(255, 255, 255, 0.05);
+.today {
+  background: rgba(255, 255, 255, 0.048);
+}
+.weekend {
+  color: rgb(78, 78, 78);
+  /* background: rgb(26, 26, 26); */
 }
 
 .space:nth-child(1),
 .space:nth-last-child(1) {
-  font-size: 1.25vw;
-  color: rgb(216, 216, 216);
+  font-size: 1vw;
+  color: rgb(233, 233, 233);
+}
+
+.space:nth-child(2) {
+  margin-left: 1vw;
+}
+.space:nth-last-child(2) {
+  margin-right: 1vw;
 }
 
 .weekday {
   display: block;
+  font-size: 0.5vw;
+  /* color: rgb(219, 219, 219); */
 }
+
 .day {
   display: block;
+  font-size: 0.5vw;
+  /* color: rgb(219, 219, 219); */
+  border-top: rgb(46, 46, 46) solid 1px;
+}
+.day.active {
+  border-top: 1px solid #1bafff;
 }
 
 .progress {
   text-align: center;
   position: relative;
-  margin: 14px auto;
-  background: rgb(83, 83, 83);
-  height: 2px;
-  width: 90vw;
+  padding: 0 2em;
+  margin: 0 auto;
+  top: 0.5vw;
+  background: rgb(26, 26, 26);
+  height: 1px;
+  width: 73vw;
 }
 .percentage {
   text-align: center;
-  margin-top: -7px;
-  padding: 0 1em;
-  color: rgb(165, 165, 165);
+  top: -0.33vw;
+  padding: 0 0.25vw;
+  color: rgb(36, 36, 36);
   position: absolute;
   background: #111;
-  font-size: 1vw;
+  font-size: 0.5vw;
 }
